@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================
+   Suraj — Python Backend Developer Portfolio
+   Design System: Charcoal & Ember
+   All colors MUST be HSL. Tokens only — never hard-code.
+   ========================================================= */
+
+@layer base {
+  :root {
+    /* Dark theme = default (premium developer feel) */
+    --background: 0 0% 7%;          /* #1a1a1a */
+    --foreground: 30 15% 92%;
+
+    --surface: 0 0% 10%;            /* #1a1a1a deepened */
+    --surface-elevated: 0 0% 13%;   /* card */
+    --surface-glass: 0 0% 18% / 0.5;
+
+    --card: 0 0% 11%;
+    --card-foreground: 30 15% 92%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 30 15% 92%;
+
+    --primary: 14 79% 57%;          /* ember #e85d3a */
+    --primary-foreground: 0 0% 7%;
+    --primary-glow: 18 90% 65%;
+
+    --secondary: 0 0% 18%;          /* #2d2d2d */
+    --secondary-foreground: 30 15% 92%;
+
+    --muted: 0 0% 16%;
+    --muted-foreground: 30 8% 65%;
+
+    --accent: 14 79% 57%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 22%;
+    --input: 0 0% 18%;
+    --ring: 14 79% 57%;
+
+    --radius: 0.875rem;
+
+    /* Gradients */
+    --gradient-ember: linear-gradient(135deg, hsl(14 79% 57%) 0%, hsl(22 90% 62%) 100%);
+    --gradient-radial: radial-gradient(circle at 20% 20%, hsl(14 79% 57% / 0.18), transparent 50%),
+                       radial-gradient(circle at 80% 0%, hsl(22 90% 62% / 0.12), transparent 50%);
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 11%) 0%, hsl(0 0% 8%) 100%);
+
+    /* Shadows */
+    --shadow-ember: 0 20px 60px -20px hsl(14 79% 57% / 0.45);
+    --shadow-soft: 0 10px 40px -10px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 0 1px hsl(14 79% 57% / 0.2), 0 0 40px hsl(14 79% 57% / 0.15);
+
+    /* Motion */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.4s var(--ease-out-expo);
+
+    /* Sidebar (unused, kept for shadcn) */
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 30 15% 92%;
+    --sidebar-primary: 14 79% 57%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 16%;
+    --sidebar-accent-foreground: 30 15% 92%;
+    --sidebar-border: 0 0% 22%;
+    --sidebar-ring: 14 79% 57%;
+  }
+
+  .light {
+    --background: 30 20% 98%;
+    --foreground: 0 0% 10%;
+    --surface: 0 0% 100%;
+    --surface-elevated: 30 20% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 14 79% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 18 90% 60%;
+    --secondary: 30 15% 92%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 30 15% 94%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 14 79% 52%;
+    --accent-foreground: 0 0% 100%;
+    --border: 30 10% 88%;
+    --input: 30 10% 88%;
+    --ring: 14 79% 52%;
+    --gradient-radial: radial-gradient(circle at 20% 20%, hsl(14 79% 52% / 0.12), transparent 50%),
+                       radial-gradient(circle at 80% 0%, hsl(22 90% 60% / 0.08), transparent 50%);
+    --shadow-soft: 0 10px 40px -10px hsl(0 0% 0% / 0.12);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Sora', system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+  code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+  ::selection { background: hsl(var(--primary) / 0.3); color: hsl(var(--foreground)); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+  ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
+}
+
+@layer components {
+  .glass {
+    background: hsl(0 0% 100% / 0.04);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+  }
+  .light .glass {
+    background: hsl(0 0% 100% / 0.6);
+    border: 1px solid hsl(0 0% 0% / 0.06);
+  }
+
+  .text-gradient {
+    background: var(--gradient-ember);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ember-glow {
+    box-shadow: var(--shadow-ember);
+  }
+
+  .section-padding {
+    @apply px-6 py-24 md:px-12 lg:px-20 lg:py-32;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .animate-blink { animation: blink 1s step-end infinite; }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-marquee { animation: marquee 30s linear infinite; }
+  .animate-fade-up { animation: fade-up 0.8s var(--ease-out-expo) both; }
+  .animate-shimmer { animation: shimmer 2.5s linear infinite; }
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
