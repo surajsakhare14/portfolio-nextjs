@@ -17,7 +17,7 @@ export const About = () => {
             Backend engineer with a bias toward <span className="text-gradient">shipping</span>.
           </h2>
           <p className="mt-6 text-muted-foreground">
-            I'm Suraj — a Python backend developer focused on building reliable, well-tested services that power real products. From payment workflows to AI-driven chatbots and automation pipelines, I love translating messy business problems into elegant systems.
+            I'm Suraj — a Software Engineer focused on building reliable, well-tested services that power real products. From payment workflows to AI-driven chatbots and automation pipelines, I love translating messy business problems into elegant systems.
           </p>
           <p className="mt-4 text-muted-foreground">
             I work end-to-end: designing the schema, writing the API, wiring webhooks, deploying to production, and instrumenting it so it stays healthy.

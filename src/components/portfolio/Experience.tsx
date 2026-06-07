@@ -1,8 +1,8 @@
 const TIMELINE = [
   {
-    role: "Senior Backend Developer",
-    company: "Freelance · Remote",
-    period: "2023 — Present",
+    role: "Software Engineer",
+    company: "Birdvision · On-site",
+    period: "March-2026 — Present",
     bullets: [
       "Architected payment & webhook systems for 10+ SaaS clients.",
       "Built AI-powered chat backends serving 100k+ monthly conversations.",
@@ -11,8 +11,8 @@ const TIMELINE = [
   },
   {
     role: "Backend Developer",
-    company: "Tech Studio · Hybrid",
-    period: "2022 — 2023",
+    company: "Payppy Technologies Pvt Ltd · On-site",
+    period: "Dec-2024 — Jan-2026",
     bullets: [
       "Owned the order-management microservice (Django + Celery).",
       "Migrated legacy monolith to event-driven services with RabbitMQ.",
@@ -20,9 +20,9 @@ const TIMELINE = [
     ],
   },
   {
-    role: "Python Developer Intern",
-    company: "Startup · On-site",
-    period: "2021 — 2022",
+    role: "Backend Developer Intern",
+    company: "Payppy Technologies Pvt Ltd · On-site",
+    period: "Sept-2024 — Dec-2024",
     bullets: [
       "Built internal automation tools that saved 20+ hours/week.",
       "Implemented REST APIs in Flask consumed by mobile & web apps.",

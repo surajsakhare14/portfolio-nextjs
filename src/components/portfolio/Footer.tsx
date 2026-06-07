@@ -7,8 +7,8 @@ export const Footer = () => {
         <div className="flex items-center gap-3">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-ember text-primary-foreground shadow-ember font-display font-bold">S</span>
           <div>
-            <div className="font-display font-bold">Suraj<span className="text-primary">.</span></div>
-            <div className="text-xs text-muted-foreground">Python Backend Developer</div>
+            <div className="font-display font-bold">Suraj Sakhare<span className="text-primary">.</span></div>
+            <div className="text-xs text-muted-foreground">Software Engineer</div>
           </div>
         </div>
 
